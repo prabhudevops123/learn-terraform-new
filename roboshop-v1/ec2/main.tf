@@ -22,13 +22,13 @@ resource "null_resource" "ansible" {
 
     inline = [
       "sudo labauto ansible",
-      "ansible-pull -i localhost, -U https://github.com/raghudevopsb73/roboshop-ansible main.yml -e env=dev -e role_name=${var.name}"
+      "ansible-pull -i localhost, -U https://github.com/prabhudevops123/roboshop-ansible main.yml -e env=dev -e role_name=${var.name}"
     ]
   }
 }
 
 resource "aws_route53_record" "www" {
-  zone_id = "Z055331734ICV430E01P7"
+  zone_id = "Z01782851TQOEKHYAZ2KN"
   name    = "${var.name}-dev"
   type    = "A"
   ttl     = 30
@@ -36,7 +36,7 @@ resource "aws_route53_record" "www" {
 }
 
 data "aws_ami" "example" {
-  owners      = ["973714476881"]
+  owners      = ["833689273858"]
   most_recent = true
   name_regex  = "Centos-8-DevOps-Practice"
 }
